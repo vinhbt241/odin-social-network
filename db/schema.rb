@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_17_015949) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_17_020802) do
+  create_table "friend_requests", force: :cascade do |t|
+    t.integer "requester_id"
+    t.integer "addressee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
