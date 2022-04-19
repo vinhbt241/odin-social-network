@@ -1,0 +1,24 @@
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <ul>
+        <li><%= post.author.name %></li>
+        <li><%= post.topic %></li>
+        <li><%= post.content %></li>
+        <li><%= post.likes.count %></li>
+        <li>
+          <ul>
+            <% post.comments.each do |comment| %>
+              <li>
+                <ul>
+                  <li><%= comment.user.name %></li>
+                  <li><%= comment.content %></li>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
