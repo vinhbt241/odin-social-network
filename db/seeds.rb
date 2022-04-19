@@ -23,3 +23,6 @@ Post.create(topic: "Post of Vinh", content: "This is a test post to see if it's 
 Post.create(topic: "Post of Viktor", content: "This is second test post, gonna check if comments working properly", author_id: 2)
 
 Comment.create(user_id: 1, post_id: 2, content: "This is Vinh's comment")
+Like.create(user_id: 1, post_id: 2)
+Like.create(user_id: 2, post_id: 2)
+Like.create(user_id: 3, post_id: 2)
