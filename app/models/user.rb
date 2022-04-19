@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :friendship_rights, class_name: "Friendship", foreign_key: "friend_right_id"
   has_many :friend_lefts, through: :friendship_rights, source: :friend_left
 
-  has_many :posts, foreign_key: "author_id"
+  has_many :posts, foreign_key: "author_id", dependent: :destroy 
   has_many :comments, through: :posts
   has_many :likes, through: :posts
 
