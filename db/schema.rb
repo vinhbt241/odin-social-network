@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_17_034442) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_19_014717) do
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "friend_requests", force: :cascade do |t|
     t.integer "requester_id"
     t.integer "addressee_id"
@@ -21,6 +29,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_17_034442) do
   create_table "friendships", force: :cascade do |t|
     t.integer "friend_left_id"
     t.integer "friend_right_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "topic"
+    t.text "content"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_many :friend_lefts, through: :friendship_rights, source: :friend_left
 
   has_many :posts, foreign_key: "author_id"
-  # has_many :comments, through: :posts
+  has_many :comments, through: :posts
 
   def friends 
     friend_lefts + friend_rights
