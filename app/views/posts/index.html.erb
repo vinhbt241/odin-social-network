@@ -1,24 +1,23 @@
-<ul>
+<div id="post-container">
   <% @posts.each do |post| %>
-    <li>
-      <ul>
-        <li><%= post.author.name %></li>
-        <li><%= post.topic %></li>
-        <li><%= post.content %></li>
-        <li>Likes: <%= post.likes.count %></li>
-        <li> Comments:
-          <ul>
-            <% post.comments.each do |comment| %>
-              <li>
-                <ul>
-                  <li><%= comment.user.name %></li>
-                  <li><%= comment.content %></li>
-                </ul>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
-    </li>
+      <div class="post">
+        <div class="author"><%= post.author.name %></div>
+        <div class="created_at"><%= ((Time.now - post.created_at)/3600).floor %> hours ago</div>
+        <div class="topic"><%= post.topic %></div>
+        <div class="content"><%= post.content %></div>
+        <div class="likes"><%= post.likes.count %></div>
+        <div class="comment-container">
+          <div class="comment-header">Comments</div>
+          <% post.comments.each do |comment| %>
+            <div class="comment">
+              <ul>
+                <li><%= comment.user.name %></li>
+                <li><%= comment.content %></li>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      </div>
   <% end %>
-</ul>
+</div>
+
