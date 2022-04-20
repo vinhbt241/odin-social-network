@@ -5,8 +5,8 @@
         <li><%= post.author.name %></li>
         <li><%= post.topic %></li>
         <li><%= post.content %></li>
-        <li><%= post.likes.count %></li>
-        <li>
+        <li>Likes: <%= post.likes.count %></li>
+        <li> Comments:
           <ul>
             <% post.comments.each do |comment| %>
               <li>
