@@ -4,7 +4,11 @@
   margin-right: 35px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+}
+
+#friend-requests-container p {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .profile-container {

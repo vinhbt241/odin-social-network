@@ -1,4 +1,5 @@
 <div id="friend-requests-container">
+  <p>Friend Requests</p>
   <div class="profile-container">
     <% @requesters.each do |requester| %>
       <div class="display-profile">
@@ -6,7 +7,7 @@
           USER IMG 
         </div>
         <div class="username">
-          Username: <%= requester.name %>
+          <%= requester.name %>
         </div>
         <%= form_with url: friendships_path, method: :post do |form| %>
           <%= form.hidden_field :requester_id, value: requester.id %>
@@ -17,6 +18,7 @@
     <% end %>
   </div>
 
+  <p>Let's make new friend!</p> 
   <div class="profile-container">
     <% @potential_friends.each do |potential_friend| %>
       <div class="display-profile">
@@ -24,7 +26,7 @@
           USER IMG 
         </div>
         <div class="username">
-          Username: <%= potential_friend.name %>
+          <%= potential_friend.name %>
         </div>
         <%= form_with url: friend_requests_path, method: :post do |form| %>
           <%= form.hidden_field :potential_friend_id, value: potential_friend.id %>
