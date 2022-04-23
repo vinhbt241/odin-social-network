@@ -1,5 +1,6 @@
 #post-container {
   width: 50vw;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -9,7 +10,7 @@
   width: 100%;
   background-color: #fff;
   border-radius: 5px;
-  border: 1px solid #d8d8d8;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
   display: grid;
   grid-template-columns: 40px auto 1fr;

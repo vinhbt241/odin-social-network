@@ -1,0 +1,26 @@
+<div id="friend-requests-container">
+  <div class="profile-container">
+    <% @requesters.each do |requester| %>
+      <div class="display-profile">
+        <div class="user-img">
+          USER IMG 
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="profile-container">
+    <% @potential_friends.each do |potential_friend| %>
+      <div class="display-profile">
+        <div class="user-img">
+          USER IMG 
+        </div>
+        <div class="username">
+          Username: <%= potential_friend.name %>
+        </div>
+        <button class="blue-btn">Add Friend</button>
+        <button class="red-btn">Cancel</button>
+      </div>
+    <% end %>
+  </div>
+</div>

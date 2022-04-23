@@ -35,4 +35,6 @@
 
  #content-container {
   margin-top: 70px;
+  box-sizing: border-box;
+  width: 100%
  }
