@@ -5,6 +5,14 @@
         <div class="user-img">
           USER IMG 
         </div>
+        <div class="username">
+          Username: <%= requester.name %>
+        </div>
+        <%= form_with url: friendships_path, method: :post do |form| %>
+          <%= form.hidden_field :requester_id, value: requester.id %>
+          <%= form.submit "Accept Friend Request", class: "blue-btn" %>
+        <% end %>
+        <button class="red-btn">Cancel</button>
       </div>
     <% end %>
   </div>
@@ -18,7 +26,10 @@
         <div class="username">
           Username: <%= potential_friend.name %>
         </div>
-        <button class="blue-btn">Add Friend</button>
+        <%= form_with url: friend_requests_path, method: :post do |form| %>
+          <%= form.hidden_field :potential_friend_id, value: potential_friend.id %>
+          <%= form.submit "Add Friend" , class: "blue-btn" %>
+        <% end %>
         <button class="red-btn">Cancel</button>
       </div>
     <% end %>

@@ -16,13 +16,15 @@
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/sidebar' %>
 
-    <% flash.each do |type, msg| %>
-      <div>
-        <%= msg %>
-      </div>
-    <% end %>
+    <div class="flash-msg-container">
+      <% flash.each do |type, msg| %>
+        <div class="flash-msg <%= type %>">
+          <%= msg %>
+        </div>
+      <% end %>
+    </div>
 
-    <div id="content-container">
+    <div id="content-container">      
       <%= yield %>
     </div>
   </body>
