@@ -14,6 +14,7 @@
   </head>
   <body>
     <%= render 'layouts/navbar' %>
+    <%= render 'layouts/sidebar' %>
 
     <% flash.each do |type, msg| %>
       <div>
@@ -21,6 +22,8 @@
       </div>
     <% end %>
 
-    <%= yield %>
+    <div id="content-container">
+      <%= yield %>
+    </div>
   </body>
 </html>

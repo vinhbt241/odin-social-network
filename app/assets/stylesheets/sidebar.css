@@ -1,0 +1,11 @@
+#sidebar {
+  position: fixed;
+  left: 10px;
+  top: 70px;
+  background-color: #fff;
+  padding: 10px 40px;
+  border-radius: 5px;
+  border: 1px solid #d8d8d8;
+  text-align: center;
+}
+
