@@ -56,12 +56,14 @@
   font-size: 16px;
   border: none;
   border-radius: 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;  
 }
 
-.blue-btn {
+.blue-btn:hover {
   background-color: #cce6ff;
 }
 
-.red-btn {
+.red-btn:hover {
   background-color: #ffcccc;
 }
