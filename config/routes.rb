@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :friend_requests, only: [:index, :create]
   resources :friendships, only: [:create]
+  resources :comments, only: [:create]
 end

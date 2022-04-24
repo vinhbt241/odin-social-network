@@ -71,6 +71,9 @@
   grid-row: 4 / 5;
   padding: 0 10px;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .comment-header {
@@ -123,4 +126,26 @@
   border-radius: 5px;
   border: none;
   margin-top: 5px;
+}
+
+.comment > .username {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.comment > .content {
+  padding: 0;
+}
+
+#new-comment > form {
+  width: 92%;
+}
+
+
+#new-comment > form > #content {
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
 }

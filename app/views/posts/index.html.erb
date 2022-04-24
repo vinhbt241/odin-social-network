@@ -18,12 +18,17 @@
         <div class="likes"><%= post.likes.count %></div>
         <div class="comment-container">
           <div class="comment-header">Comments</div>
+          <div id="new-comment">
+            <%= form_with url: comments_path, method: :post do |form| %>
+              <%= form.text_field :content, placeholder: "Write you comment..." %>
+              <%= form.hidden_field :user_id, value: current_user.id %>
+              <%= form.hidden_field :post_id, value: post.id %>
+            <% end %>
+          </div>
           <% post.comments.each do |comment| %>
             <div class="comment">
-              <ul>
-                <li><%= comment.user.name %></li>
-                <li><%= comment.content %></li>
-              </ul>
+                <p class="username"><%= comment.user.name %></p>
+                <p class="content"><%= comment.content %></p>
             </div>
           <% end %>
         </div>
