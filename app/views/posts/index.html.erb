@@ -1,4 +1,14 @@
 <div id="post-container">
+  <div id="new-post">
+    <p>Share what you think:</p>
+    <%= form_with url: posts_path, method: :post do |form| %>
+      <%= form.text_field :topic, placeholder: "Topic" %>
+      <%= form.text_area :content, placeholder: "Content" %>
+      <%= form.hidden_field :author_id, value: current_user.id %>
+      <%= form.submit "Post", id: "post-btn"%>
+    <% end %>
+  </div>
+
   <% @posts.each do |post| %>
       <div class="post">
         <div class="author"><%= post.author.name %></div>
