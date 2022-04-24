@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :comments, only: [:create]
   resources :likes, only: [:create]
   post '/like/downvote', to: 'likes#destroy', as:'downvote'
+  resources :users, only: [:show]
 end
