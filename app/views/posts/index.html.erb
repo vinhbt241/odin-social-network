@@ -19,14 +19,14 @@
           <%= form_with url: likes_path, method: :post do |form| %>
             <%= form.hidden_field :user_id, value: current_user.id %>
             <%= form.hidden_field :post_id, value: post.id %>
-            <%= form.submit "↑", id: "like-btn" %>
+            <%= form.submit "↑", class: "like-btn" %>
           <% end %>
 
           <%= post.likes.count %>
 
           <%= form_with url: downvote_path, method: :post do |form| %>
             <%= form.hidden_field :post_id, value: post.id %>
-            <%= form.submit "↓", id: "like-btn" %>
+            <%= form.submit "↓", class: "like-btn" %>
           <% end %>
         </div>
         <div class="comment-container">

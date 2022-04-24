@@ -3,8 +3,8 @@ class LikesController < ApplicationController
     @like = Like.new(like_params)
 
     unless Like.where(user_id: @like.user.id).where(post_id: @like.post.id).first.nil?
-      redirect_to posts_path, status: :unprocessable_entity
-      return 
+      flash.notice = "You already upvoted this post"
+      redirect_to posts_path 
     else
       @like.save 
       redirect_to posts_path
