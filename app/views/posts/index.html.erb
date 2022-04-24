@@ -15,7 +15,17 @@
         <div class="created_at"><%= ((Time.now - post.created_at)/3600).floor %> hours ago</div>
         <div class="topic"><%= post.topic %></div>
         <div class="content"><%= post.content %></div>
-        <div class="likes"><%= post.likes.count %></div>
+        <div class="likes">
+
+          <%= form_with url: likes_path, method: :post do |form| %>
+            <%= form.hidden_field :user_id, value: current_user.id %>
+            <%= form.hidden_field :post_id, value: post.id %>
+            <%= form.submit "^", id: "like-btn" %>
+          <% end %>
+
+          <%= post.likes.count %>
+          <button>v</button>
+        </div>
         <div class="comment-container">
           <div class="comment-header">Comments</div>
           <div id="new-comment">
