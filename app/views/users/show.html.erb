@@ -1,19 +1,31 @@
 <div id="profile-container">
-  The User Show page contains their Profile information, photo, and Posts
-  <ul>
-    <li>Nickname: <%= @user.name %></li>
-    <li>Email: <%= @user.email %></li>
+  <h1> Your Profile </h1>
+  <div id="profile-info">
     <% unless @profile.nil? %>
-      <li>First Name: <%= @profile.first_name %></li>
-      <li>Last Name: <%= @profile.last_name %></li>
-      <li>Birthday: <%= @profile.birth_day.strftime("%-d/%-m/%Y") %></li>
-      <p><%= @profile.self_describe %></p>
+    <div id="user-info">
+      <ul>
+          <li>First Name: <%= @profile.first_name %></li>
+          <li>Last Name: <%= @profile.last_name %></li>
+          <li>Birthday: <%= @profile.birth_day.strftime("%-d/%-m/%Y") %></li>
+      </ul>
+      <div id="user-img">USER'S IMG</div>
+    </div>
+    <div id="more-about-user">
+      <h2>More about me</h2>
+      <p id="user-describe"><%= @profile.self_describe %></p>
+    </div>
     <% end %>
-  </ul>
+  </div>
 
-  <% if @profile.nil? %>
-    <%= link_to "New member? Create a profile, let's people know more about you!", new_profile_path %>
-  <% else %>
-    <%= link_to "Update your profile", edit_profile_path(current_user.id) %>
-  <% end %>
+  <div id="profile-link">
+    <% if @profile.nil? %>
+      <%= link_to new_profile_path do %>
+        <div id="new-profile-link">New member? Create a profile, let's people know more about you!</div>
+      <% end %>
+    <% else %>
+      <%= link_to edit_profile_path(current_user.id) do %>
+        <div id="update-profile-link">Update your profile</div>
+      <% end %>
+    <% end %>
+  </div>
 </div>

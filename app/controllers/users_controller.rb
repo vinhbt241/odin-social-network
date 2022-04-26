@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
-    @profile = @user.profile
-    @posts = @user.posts
+    @profile = current_user.profile
+    @posts = current_user.posts
   end
 end
