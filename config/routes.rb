@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :likes, only: [:create]
   post '/like/downvote', to: 'likes#destroy', as:'downvote'
   resources :users, only: [:show]
+  resources :profiles, only: [:new, :create, :edit, :update]
 end

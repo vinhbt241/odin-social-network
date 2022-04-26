@@ -1,0 +1,31 @@
+<%= form_with model: profile do |form| %>
+  <div>
+    <%= form.label :first_name, "First name" %>
+    <br>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, "Last name" %>
+    <br>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :birth_day, "Birth day" %>
+    <br>
+    <%= form.date_field :birth_day %>
+  </div>
+
+  <div>
+    <%= form.label :self_describe, "Add somethings you think people may interested" %>
+    <br>
+    <%= form.text_area :self_describe %>
+  </div>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
