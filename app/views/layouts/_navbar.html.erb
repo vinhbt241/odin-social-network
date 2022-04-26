@@ -2,9 +2,7 @@
   <div id="li-left">
     <%= link_to "Home", root_path, title: "Home" %>
   </div>
-
   <div id="li-right">
-    <% if user_signed_in? %>
       <div id="msg-container">
         <button class="link" id="notify-msg-btn"><i class="icon-envelope"></i></button>
         <div id="dropdown-msgs">
@@ -14,6 +12,6 @@
       <%= link_to destroy_user_session_path, method: :delete, title: "Log Out" do %>
         <i class="icon-off"></i>
       <% end %>
-    <% end %>
   </div>
 </div>
+

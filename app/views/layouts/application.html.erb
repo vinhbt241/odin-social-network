@@ -13,8 +13,10 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render 'layouts/navbar' %>
-    <%= render 'layouts/sidebar' %>
+    <% if user_signed_in? %>
+      <%= render 'layouts/navbar' %>
+      <%= render 'layouts/sidebar' %>
+    <% end %>
 
     <div class="flash-msg-container">
       <% flash.each do |type, msg| %>

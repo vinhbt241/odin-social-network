@@ -1,6 +1,4 @@
 <div id="sidebar">
-  <% if user_signed_in? %>
-    <%= link_to "Profile", user_path(current_user.id) %>
-    <%= link_to "Friends", friend_requests_path %>
-  <% end %>
+  <%= link_to "Profile", user_path(current_user.id) %>
+  <%= link_to "Friends", friend_requests_path %>
 </div>
