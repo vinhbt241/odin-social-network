@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:github]
+         :omniauthable, omniauth_providers: [:github, :facebook]
 
   has_many :sent_friend_requests, class_name: "FriendRequest", foreign_key: "requester_id"
   has_many :addressees, through: :sent_friend_requests, source: :addressee
@@ -30,7 +30,7 @@ class User < ApplicationRecord
     user = User.where(email: data['email']).first
 
     unless user
-        user = User.create(name: data['nickname'],
+        user = User.create(name: data['nickname'].nil? ? data['name'] : data['nickname'],
            email: data['email'],
            password: Devise.friendly_token[0,20]
         )
