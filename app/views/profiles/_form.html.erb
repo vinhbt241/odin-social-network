@@ -1,4 +1,4 @@
-<%= form_with model: profile do |form| %>
+<%= form_with model: profile, id: "profile-form" do |form| %>
   <div>
     <%= form.label :first_name, "First name" %>
     <br>
@@ -14,18 +14,18 @@
   <div>
     <%= form.label :birth_day, "Birth day" %>
     <br>
-    <%= form.date_field :birth_day %>
+    <%= form.date_field :birth_day, id: "form-birth-day" %>
   </div>
 
   <div>
     <%= form.label :self_describe, "Add somethings you think people may interested" %>
     <br>
-    <%= form.text_area :self_describe %>
+    <%= form.text_area :self_describe, id: "form-self-describe" %>
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit id: "submit-profile-form" %>
   </div>
 <% end %>

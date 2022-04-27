@@ -19,7 +19,7 @@ class ProfilesController < ApplicationController
   end
 
   def update 
-    user = User.find(params[:id])
+    user = User.find(params[:profile][:user_id])
     @profile = user.profile 
 
     if @profile.update(profile_params)
